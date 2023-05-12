@@ -53,33 +53,49 @@ Note: the dot (.) refers to _nested objects_!
 |------------------------|----------------------------------------------|---------------------------------|
 | `onComplete`           | Form submission action, see below (required) | -                               |
 | `termsAndConditions`   | Link for terms and conditions (required)     | -                               |
-| `type`                 | Widget type                                  | `'inline'`                      |
-| `contact.name`         | Show name form field                         | `true`                          |
-| `contact.phone`        | Show phone form field                        |`true`                           |
-| `style.accentColor`    | Accent color                                 |`'#2d7a72'`                      |
-| `style.accentDark`     | Accent dark color                            |`'#1f5550'`                      |
+| `type`                 | Widget type, `'inline'` or `'floating'`      | `'inline'`                      |
+| `contact.name`         | Ask for customer name                        | `true`                          |
+| `contact.phone`        | Ask for customer phone number                | `true`                          |
+| `style.accentColor`    | Accent color                                 | `'#2d7a72'`                     |
+| `style.accentDark`     | Accent dark color                            | `'#1f5550'`                     |
 | `style.accentContrast` | Accent contrast color                        | `'#fff'`                        |
 | `style.fontFamily`     | Font family                                  | generic sans-serif font         |
-| `development`          | Development mode                             | `false`                         |  
-
-_Development mode_ is intended to be used for testing and development against the non-production AVM endpoint.
+| `development`          | Development mode, see below                  | `false`                         |  
 
 ### onComplete Options
 
 There are two options for the `onComplete` parameter, `redirect` and `CTA`:
 
+With `'redirect'`, the user is redirected to the specified url after a success form submission. 
+The result (home valuation) is then added as a query parameters. 
 ```javascript
 const onCompleteRedirect = {
   type: 'redirect',
   url: 'https://google.com',
 }
+```
 
+With `'CTA'`, the result is (home valuation) is displayed in the widget with a configurable button bellow on how to proceed.
+```
 const onCompleteCTA = {
   type: 'CTA',
   url: 'https://google.com',
   text: 'Gå vidare',
 }
 ```
+### Development mode
+With `development: true`, requests are sent to a separate development environment, for which separate webhooks can be set up etc. (see [Get the data](#➡️-get-the-data) below.) Please note:
+- *Development mode must be used to make requests (submit the form) with `localhost` as an origin.*
+- *Development mode is intended to be used for testing, the valuations obtained are low quality and not representative of actual home market values.*
+
+
+## ➡️ Get the data
+
+The preferred way is to provide a webhook url to which we will post back the webform data. Please contact tech@movesta.com for more info.
+
+## 🏁 Examples
+
+See `examples/` directory for help to get up and running quickly.
 
 ## 🔑 Access
 
