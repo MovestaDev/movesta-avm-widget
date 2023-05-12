@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body style="max-width: 100%; max-height: 100vh">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="margin: auto">
+      <div style="text-align: center; margin: 30px 0px">
+        <h1>Värdera din bostad på 1 minut!</h1>
+      </div>
+      <div>
+        <div
+          class="movesta-avm-widget"
+          id="avm-widget"
+          style="margin: auto"
+        ></div>
+      </div>
+    </div>
+    <script 
+      src="https://cdn.jsdelivr.net/gh/MovestaDev/movesta-avm-widget@0.0.1/static/movesta-avm-widget.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+        MovestaAVMWidget.init({
+        onComplete: {
+          type: 'CTA',
+          url: 'https://successfulrealtor.se/next-step',
+          text: 'Gå vidare',
+        },
+        termsAndConditions: 'https://successfulrealtor.se/terms-of-service',
+        development: true,
+      })
+    </script>
+  </body>
+</html>
