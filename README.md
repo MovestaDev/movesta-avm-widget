@@ -66,8 +66,8 @@ Note: the dot (.) refers to _nested objects_!
 
 There are two options for the `onComplete` parameter, `redirect` and `CTA`:
 
-With `'redirect'`, the user is redirected to the specified url after a success form submission. 
-The result (home valuation) is then added as a query parameters. 
+With `'redirect'`, the user is redirected to the specified URL after successful form submission. 
+The valuation result is added as query parameters. 
 ```javascript
 const onCompleteRedirect = {
   type: 'redirect',
@@ -75,7 +75,7 @@ const onCompleteRedirect = {
 }
 ```
 
-With `'CTA'`, the result is (home valuation) is displayed in the widget with a configurable button bellow on how to proceed.
+With `'CTA'`, the valuation result is displayed in the widget with a configurable CTA button below.
 ```
 const onCompleteCTA = {
   type: 'CTA',
@@ -84,14 +84,14 @@ const onCompleteCTA = {
 }
 ```
 ### Development mode
-With `development: true`, requests are sent to a separate development environment, for which separate webhooks can be set up etc. (see [Get the data](#➡️-get-the-data) below.) Please note:
-- *Development mode must be used to make requests (submit the form) with `localhost` as an origin.*
-- *Development mode is intended to be used for testing, the valuations obtained are low quality and not representative of actual home market values.*
+With `development: true`, requests are sent to a separate development environment, for which separate webhooks can be set up, etc. (see [Get the data](#➡️-get-the-data) below.) Please note:
+- *Development mode must be used to submit the form with `localhost` as an origin.*
+- *Development mode should be used for testing only, the valuations obtained are low quality and not representative of actual home market values.*
 
 
 ## ➡️ Get the data
 
-The preferred way is to provide a webhook url to which we will post back the webform data. Please contact tech@movesta.com for more info.
+The preferred way is to provide a webhook url to which we will post back the webform data. Contact tech@movesta.com for more info.
 
 ## 🏁 Examples
 
