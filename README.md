@@ -28,14 +28,8 @@ For usage with React, follow this guide: [4 Ways of Adding External JS Files in 
 This example creates the widget element and 
 ```html
 <script type="text/javascript">
-  const myStyle = {
-    fontFamily: 'inherit',
-    accentColor: '#03396c',
-    accentDark: '#03396c',
-  };
-
   MovestaAVMWidget.init({
-    style: myStyle,
+    style: {},
     onComplete: {
       type: 'redirect',
       url: 'https://successfulrealtor.se/submitted'
@@ -49,18 +43,51 @@ This example creates the widget element and
 
 Note: the dot (.) refers to _nested objects_!
 
-| Parameter Name         | Description                                  | Default Value                   |
-|------------------------|----------------------------------------------|---------------------------------|
-| `onComplete`           | Form submission action, see below (required) | -                               |
-| `termsAndConditions`   | Link for terms and conditions (required)     | -                               |
-| `type`                 | Widget type, `'inline'` or `'floating'`      | `'inline'`                      |
-| `contact.name`         | Ask for customer name                        | `true`                          |
-| `contact.phone`        | Ask for customer phone number                | `true`                          |
-| `style.accentColor`    | Accent color                                 | `'#2d7a72'`                     |
-| `style.accentDark`     | Accent dark color                            | `'#1f5550'`                     |
-| `style.accentContrast` | Accent contrast color                        | `'#fff'`                        |
-| `style.fontFamily`     | Font family                                  | generic sans-serif font         |
-| `development`          | Development mode, see below                  | `false`                         |  
+| Parameter Name                           | Description                                                 | Default Value     |
+| ---------------------------------------- | ----------------------------------------------------------- | ----------------- |
+| `onComplete`                             | Form submission action, see below (required)                | -                 |
+| `termsAndConditions`                     | Link for terms and conditions (required)                    | -                 |
+| `type`                                   | Widget type, `'inline'` or `'floating'`                     | `'inline'`        |
+| `contact.name`                           | Ask for customer name                                       | `true`            |
+| `contact.phone`                          | Ask for customer phone number                               | `true`            |
+| `development`                            | Development mode, see below                                 | `false`           |
+| `style.circularProgressColor`            | Color for the spinner at the end of the form                | `black`           |
+| `style.spacing`                          | Base spacing, multiples of it are used across the widget    | `5px`             |
+| `style.transitionFactor`                 | Transition duration factor, set to 0 to disable the effect. | `1`               |
+| `style.floatingBoxButtonBackgroundColor` | Button color, in case `type` is set to `floating`           | `#aaa`            |
+
+
+### CSS classes
+
+You can use the following CSS classes to style the widget
+
+| CSS Class                                        | Description                                                            |
+| ------------------------------------------------ | ---------------------------------------------------------------------- |
+| `.movesta--avm-widget-root`                      | Widget container                                                       |
+| `.movesta--avm-form`                             | AVM form container                                                     |
+| `.movesta--step-heading`                         | Form step heading                                                      |
+| `.movesta--step-description`                     | Form step description                                                  |
+| `.movesta--step-container  `                     | Form step container (input elements)                                   |
+| `.movesta--link`                                 | All link elements (anchors)                                            |
+| `.movesta--text-field`                           | Text field input                                                       |
+| `.movesta--text-field-label`                     | Text (input) fields label                                              |
+| `.movesta--text-field-container`                 | Text (input) field container                                           |
+| `.movesta--button-primary`                       | Primary button (main action)                                           |
+| `.movesta--button-secondary`                     | Secondary button (e.g. back)                                           |
+| `.movesta--housing-type-button`                  | Housing type button                                                    |
+| `.movesta--housing-type-button-active`           | Active housing type button (selected)                                  |
+| `.movesta--checkbox`                             | Checkbox input                                                         |
+| `.movesta--form-error`                           | Form input error message, e.g. alphabetic character in number of rooms |
+| `.movesta--autocomplete-input-with-options`      | Autocomplete input, with options (on top of text field styling)        |
+| `.movesta--autocomplete-options-wrapper`         | Autocomplete options wrapper                                           |
+| `.movesta--autocomplete-option`                  | Autocomplete option                                                    |
+| `.movesta--autocomplete-option-no-street-number` | Autocomplete option without street number                              |
+| `.movesta--valuation-wrapper`                    | Valuation result wrapper                                               |
+| `.movesta--valuation-heading`                    | Valuation result heading                                               |
+| `.movesta--valuation-estimate`                   | Valuation estimate                                                     |
+| `.movesta--valuation-range`                      | Valuation range                                                        |
+| `.movesta--valuation-error`                      | Valuation error message (e.g. backend error)                           |
+
 
 ### onComplete Options
 
