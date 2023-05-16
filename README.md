@@ -25,8 +25,9 @@ For usage with React, follow this guide: [4 Ways of Adding External JS Files in 
 
 ### Step 2: Create the Widget element
 
-This example creates the widget element and 
+This example creates the widget element in HTML and initializes it via JavaScript.
 ```html
+<div class="movesta-avm-widget"></div>
 <script type="text/javascript">
   MovestaAVMWidget.init({
     style: {},
@@ -45,21 +46,21 @@ Note: the dot (.) refers to _nested objects_!
 
 | Parameter Name                           | Description                                                 | Default Value     |
 | ---------------------------------------- | ----------------------------------------------------------- | ----------------- |
-| `onComplete`                             | Form submission action, see below (required)                | -                 |
-| `termsAndConditions`                     | Link for terms and conditions (required)                    | -                 |
+| `onComplete`                             | Form submission action, see below                           | (required)        |
+| `termsAndConditions`                     | Link for terms and conditions                               | (required)        |
 | `type`                                   | Widget type, `'inline'` or `'floating'`                     | `'inline'`        |
 | `contact.name`                           | Ask for customer name                                       | `true`            |
 | `contact.phone`                          | Ask for customer phone number                               | `true`            |
 | `development`                            | Development mode, see below                                 | `false`           |
-| `style.circularProgressColor`            | Color for the spinner at the end of the form                | `black`           |
-| `style.spacing`                          | Base spacing, multiples of it are used across the widget    | `5px`             |
+| `style.circularProgressColor`            | Color for the spinner at the end of the form                | `'black'`         |
+| `style.spacing`                          | Base spacing, multiples of it are used across the widget    | `'5px'`           |
 | `style.transitionFactor`                 | Transition duration factor, set to 0 to disable the effect. | `1`               |
-| `style.floatingBoxButtonBackgroundColor` | Button color, in case `type` is set to `floating`           | `#aaa`            |
+| `style.floatingBoxButtonBackgroundColor` | Button color, in case `type` is set to `'floating'`         | `'#aaa'`          |
 
 
 ### CSS classes
 
-You can use the following CSS classes to style the widget
+You can use the following CSS classes to style the widget. There is an example stylesheet in the `examples/` folder.
 
 | CSS Class                                        | Description                                                            |
 | ------------------------------------------------ | ---------------------------------------------------------------------- |
@@ -72,10 +73,10 @@ You can use the following CSS classes to style the widget
 | `.movesta--text-field`                           | Text field input                                                       |
 | `.movesta--text-field-label`                     | Text (input) fields label                                              |
 | `.movesta--text-field-container`                 | Text (input) field container                                           |
-| `.movesta--button-primary`                       | Primary button (main action)                                           |
+| `.movesta--button-primary`                       | Primary button (e.g. next, submit)                                     |
 | `.movesta--button-secondary`                     | Secondary button (e.g. back)                                           |
 | `.movesta--housing-type-button`                  | Housing type button                                                    |
-| `.movesta--housing-type-button-active`           | Active housing type button (selected)                                  |
+| `.movesta--housing-type-button-active`           | Active (selected) housing type button                                  |
 | `.movesta--checkbox`                             | Checkbox input                                                         |
 | `.movesta--form-error`                           | Form input error message, e.g. alphabetic character in number of rooms |
 | `.movesta--autocomplete-input-with-options`      | Autocomplete input, with options (on top of text field styling)        |
