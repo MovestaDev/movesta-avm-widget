@@ -2,7 +2,7 @@
   font-family: sans-serif;
 }
 .movesta--avm-form {
-  max-width: 500px;
+  max-width: 450px;
 }
 a.movesta--link {
   color: #333;
@@ -117,6 +117,7 @@ a.movesta--link:not(.movesta--link-no-hover):hover {
 
 .movesta--valuation-wrapper {
   text-align: center;
+  max-width: 450px;
 }
 .movesta--valuation-heading, .movesta--valuation-estimate, .movesta--valuation-range {
   margin-bottom: 10px;
