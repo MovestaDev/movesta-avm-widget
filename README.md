@@ -52,15 +52,18 @@ Note: the dot (.) refers to _nested objects_!
 | `contact.name`                           | Ask for customer name                                       | `true`            |
 | `contact.phone`                          | Ask for customer phone number                               | `true`            |
 | `development`                            | Development mode, see below                                 | `false`           |
-| `style.circularProgressColor`            | Color for the spinner at the end of the form                | `'black'`         |
 | `style.spacing`                          | Base spacing, multiples of it are used across the widget    | `'5px'`           |
 | `style.transitionFactor`                 | Transition duration factor, set to 0 to disable the effect. | `1`               |
 | `style.floatingBoxButtonBackgroundColor` | Button color, in case `type` is set to `'floating'`         | `'#aaa'`          |
+| `inputLabelPlacement`                    | Form field label position (`'top'` or `'placeholder'`)      | `'top'`           |
+| `stepHeadings`                           | Display heading for each step                               | `true`            |
 
 
 ### CSS classes
 
 You can use the following CSS classes to style the widget. There is an example stylesheet in the `examples/` folder.
+
+For better understanding of the DOM and the classes, use the dev console in your browser.
 
 | CSS Class                                        | Description                                                            |
 | ------------------------------------------------ | ---------------------------------------------------------------------- |
@@ -71,18 +74,24 @@ You can use the following CSS classes to style the widget. There is an example s
 | `.movesta--step-container  `                     | Form step container (input elements)                                   |
 | `.movesta--link`                                 | All link elements (anchors)                                            |
 | `.movesta--text-field`                           | Text field input                                                       |
-| `.movesta--text-field-label`                     | Text (input) fields label                                              |
+| `.movesta--field-label`                          | Form input fields label                                                |
 | `.movesta--text-field-container`                 | Text (input) field container                                           |
 | `.movesta--button-primary`                       | Primary button (e.g. next, submit)                                     |
 | `.movesta--button-secondary`                     | Secondary button (e.g. back)                                           |
-| `.movesta--housing-type-button`                  | Housing type button                                                    |
-| `.movesta--housing-type-button-active`           | Active (selected) housing type button                                  |
-| `.movesta--checkbox`                             | Checkbox input                                                         |
-| `.movesta--form-error`                           | Form input error message, e.g. alphabetic character in number of rooms |
 | `.movesta--autocomplete-input-with-options`      | Autocomplete input, with options (on top of text field styling)        |
 | `.movesta--autocomplete-options-wrapper`         | Autocomplete options wrapper                                           |
 | `.movesta--autocomplete-option`                  | Autocomplete option                                                    |
 | `.movesta--autocomplete-option-no-street-number` | Autocomplete option without street number                              |
+| `.movesta--housing-type-buttons-wrapper`         | Container for the housing type buttons (apartment, townhouse, ...)     |
+| `.movesta--housing-type-button`                  | Housing type button                                                    |
+| `.movesta--housing-type-button-active`           | Active (selected) housing type button                                  |
+| `.movesta--radio-container`                      | Outer container for radio buttons (currently only housing types)       |
+| `.movesta--checkbox`                             | Checkbox input (input element)                                         |
+| `.movesta--checkbox-container`                   | Container around the input, the empty element and the text label       |
+| `.movesta--checkbox-label`                       | Empty element to be used to style a "fake checkbox" if input is hidden |
+| `.movesta--checkbox-label-checked`               | Empty element if the checkbox is checked                               |
+| `.movesta--form-error`                           | Form input error message, e.g. alphabetic character in number of rooms |
+| `.movesta--circular-progress`                    | Loading spinner for form submission                                    |
 | `.movesta--valuation-wrapper`                    | Valuation result wrapper                                               |
 | `.movesta--valuation-heading`                    | Valuation result heading                                               |
 | `.movesta--valuation-estimate`                   | Valuation estimate                                                     |
@@ -119,11 +128,11 @@ With `development: true`, requests are sent to a separate development environmen
 
 ## ➡️ Get the data
 
-The preferred way is to provide a webhook url to which we will post back the webform data. Contact tech@movesta.com for more info.
+The preferred way is to provide a webhook URL to which we will post back the webform data and valuation result. Contact tech@movesta.com for more info.
 
 ## 🏁 Examples
 
-See `examples/` directory for help to get up and running quickly.
+See the `examples/` directory for help to get up and running quickly.
 
 ## 🔑 Access
 
