@@ -12,30 +12,34 @@ a.movesta--link {
 a.movesta--link:not(.movesta--link-no-hover):hover {
   text-decoration: underline;
 }
-.movesta--text-field {
-  padding: 10px;
-  border: 1px solid #333;
-  width: 100%;
-  display: block;
-  outline: none;
-}
-.movesta--text-field-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
 .movesta--text-field-container {
   width: 100%;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+.movesta--text-field {
+  padding: 10px;
+  border: 1px solid #333;
+  display: block;
+  outline: none;
+}
+.movesta--field-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.movesta--button-primary, .movesta--button-secondary {
+  width: 160px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .movesta--button-primary {
   background-color: #333;
   color: #FFF;
   border: 1px solid #333;
-  width: 160px;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .movesta--button-primary:disabled {
   opacity: 0.3;
@@ -61,6 +65,12 @@ a.movesta--link:not(.movesta--link-no-hover):hover {
   color: #fff;
   border: none;
 }
+.movesta--housing-type-buttons-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
 .movesta--housing-type-button {
   display: flex;
   flex-direction: column;
@@ -79,8 +89,8 @@ a.movesta--link:not(.movesta--link-no-hover):hover {
   background-color: white;
 }
 .movesta--form-error {
-  color: red;
   font-weight: bold;
+  width: 100%;
 }
 
 .movesta--autocomplete-input-with-options {
@@ -123,5 +133,40 @@ a.movesta--link:not(.movesta--link-no-hover):hover {
   margin-bottom: 10px;
 }
 .movesta--valuation-error {
+  color: #333;
+}
+
+.movesta--step-container {
+  height: 300px;
+}
+
+.movesta--checkbox-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.movesta--checkbox {
+  display: none;
+}
+
+.movesta--checkbox-label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+}
+
+.movesta--checkbox-label-checked:after {
+  content: "⦿";
+  display: block;
+  text-align: center;
+  line-height: 17px;
+  font-weight: bold;
+  color: lightcoral;
+}
+.movesta--circular-progress {
+  height: 20px;
   color: #333;
 }
