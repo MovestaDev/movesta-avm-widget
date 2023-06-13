@@ -44,19 +44,28 @@ This example creates the widget element in HTML and initializes it via JavaScrip
 
 Note: the dot (.) refers to _nested objects_!
 
-| Parameter Name                           | Description                                                 | Default Value     |
-| ---------------------------------------- | ----------------------------------------------------------- | ----------------- |
-| `onComplete`                             | Form submission action, see below                           | (required)        |
-| `termsAndConditions`                     | Link for terms and conditions                               | (required)        |
-| `type`                                   | Widget type, `'inline'` or `'floating'`                     | `'inline'`        |
-| `contact.name`                           | Ask for customer name                                       | `true`            |
-| `contact.phone`                          | Ask for customer phone number                               | `true`            |
-| `development`                            | Development mode, see below                                 | `false`           |
-| `style.spacing`                          | Base spacing, multiples of it are used across the widget    | `'5px'`           |
-| `style.transitionFactor`                 | Transition duration factor, set to 0 to disable the effect. | `1`               |
-| `style.floatingBoxButtonBackgroundColor` | Button color, in case `type` is set to `'floating'`         | `'#aaa'`          |
-| `inputLabelPlacement`                    | Form field label position (`'top'` or `'placeholder'`)      | `'top'`           |
-| `stepHeadings`                           | Display heading for each step                               | `true`            |
+| Parameter Name                           | Description                                                 | Default Value                                               |
+| ---------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `type`                                   | Widget type, `'inline'` or `'floating'`                     | `'inline'`                                                  |
+| `style.spacing`                          | Base spacing, multiples of it are used across the widget    | `'5px'`                                                     |
+| `style.transitionFactor`                 | Transition duration factor, set to 0 to disable the effect. | `1`                                                         |
+| `style.floatingBoxButtonBackgroundColor` | Button color, in case `type` is set to `'floating'`         | `'#aaa'`                                                    |
+| `inputLabelPlacement`                    | Form field label position (`'top'` or `'placeholder'`)      | `'top'`                                                     |
+| `stepHeadings`                           | Display heading for each step                               | `true`                                                      |
+| `onComplete.type`                        | Completion action type, `'button'` or `'url'`               | (required)                                                  |
+| `onComplete.url`                         | Completion redirect URL                                     | (required)                                                  |
+| `onComplete.buttonText`                  | CTA button text for `onComplete.type` set to `'button'`     | `'Gå vidare'`                                               |
+| `onComplete.estimatePrefix`              | Text before the valuation, e.g. "Värderingen är"            | `null`                                                      |
+| `onComplete.showRange`                   | Show valuation range                                        | `true`                                                      |
+| `onComplete.showRestart`                 | Show restart button                                         | `true`                                                      |
+| `onComplete.headingText`                 | Heading on the valuation page                               | `'Din värdeindikation'`                                     |
+| `onComplete.introText`                   | Text above the valuation estimate                           | `null`                                                      |
+| `onComplete.promptText`                  | Text below the valuation estimate/range                     | `null`                                                      |
+| `contact.name`                           | Ask for customer name                                       | `true`                                                      |
+| `contact.phone`                          | Ask for customer phone number                               | `true`                                                      |
+| `contact.introText`                      | Text above the contact fields                               | `'Fyll i dina kontaktppgifter och se din värdeindikation.'` |
+| `termsAndConditions`                     | Link for terms and conditions                               | (required)                                                  |
+| `development`                            | Development mode, see below                                 | `false`                                                     |
 
 
 ### CSS classes
@@ -94,6 +103,8 @@ For better understanding of the DOM and the classes, use the dev console in your
 | `.movesta--circular-progress`                    | Loading spinner for form submission                                    |
 | `.movesta--valuation-wrapper`                    | Valuation result wrapper                                               |
 | `.movesta--valuation-heading`                    | Valuation result heading                                               |
+| `.movesta--valuation-intro`                      | Valuation result text (above valuation)                                |
+| `.movesta--valuation-footer`                     | Valuation result text (below valuation)                                |
 | `.movesta--valuation-estimate`                   | Valuation estimate                                                     |
 | `.movesta--valuation-range`                      | Valuation range                                                        |
 | `.movesta--valuation-error`                      | Valuation error message (e.g. backend error)                           |
@@ -109,15 +120,17 @@ The valuation result is added as query parameters.
 const onCompleteRedirect = {
   type: 'redirect',
   url: 'https://google.com',
+  // ...
 }
 ```
 
 With `'CTA'`, the valuation result is displayed in the widget with a configurable CTA button below.
-```
+```javascript
 const onCompleteCTA = {
   type: 'CTA',
   url: 'https://google.com',
-  text: 'Gå vidare',
+  buttonText: 'Gå vidare',
+  // ...
 }
 ```
 ### Development mode
