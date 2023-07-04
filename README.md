@@ -61,12 +61,18 @@ Note: the dot (.) refers to _nested objects_!
 | `onComplete.headingText`                 | Heading on the valuation page                               | `'Din värdeindikation'`                                     |
 | `onComplete.introText`                   | Text above the valuation estimate                           | `null`                                                      |
 | `onComplete.promptText`                  | Text below the valuation estimate/range                     | `null`                                                      |
-| `contact.name`                           | Ask for customer name                                       | `true`                                                      |
-| `contact.phone`                          | Ask for customer phone number                               | `true`                                                      |
-| `contact.introText`                      | Text above the contact fields                               | `'Fyll i dina kontaktppgifter och se din värdeindikation.'` |
 | `termsAndConditions`                     | Link for terms and conditions                               | (required)                                                  |
 | `development`                            | Development mode, see below                                 | `false`                                                     |
+| `steps.postalAddress.headingText`        | Heading for postal address step                             | `'Var bor du?'`                                             |
+| `steps.housingType.headingText`          | Heading for housing type step                               | `'Vilken typ av bostad är det?'`                            |
+| `steps.livingArea.headingText`           | Heading for living area step                                | `'Hur stor är bostaden?'`                                   |
+| `steps.numRooms.headingText`             | Heading for no rooms address step                           | `'Hur många rum?'`                                          |
+| `steps.contactDetails.headingText`       | Heading for contact details step                            | `'Hur når vi dig?'`                                         |
+| `steps.contactDetails.introText`         | Text above the contact fields                               | `'Fyll i dina kontaktppgifter och se din värdeindikation.'` |
+| `steps.contactDetails.name`              | Ask for customer name                                       | `true`                                                      |
+| `steps.contactDetails.phone`             | Ask for customer phone number                               | `true`                                                      |
 
+(All `steps.contactDetails.*` fields can also be set using just `contact.*` but this is deprecated and will be removed in future releases.)
 
 ### CSS classes
 
